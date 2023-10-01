@@ -13,6 +13,9 @@
         android:theme="@style/Theme.SLIIT_Travel_App"
         tools:targetApi="31">
         <activity
+            android:name=".TrainReservePage"
+            android:exported="false" />
+        <activity
             android:name=".TrainSchedule"
             android:exported="false" />
         <activity
