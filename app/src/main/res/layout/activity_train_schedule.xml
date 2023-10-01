@@ -166,7 +166,7 @@
             android:textSize="14sp" />
 
         <Button
-            android:id="@+id/see_more_1"
+            android:id="@+id/see_more_button"
             android:layout_width="158dp"
             android:layout_height="38dp"
             android:layout_below="@+id/doc_name1"
