@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,11 +22,15 @@ public class TrainReservePage extends AppCompatActivity {
     private String date;
     private DatePickerDialog datePickerDialog;
 
+
+
     String[] From = {"Galle1", "Galle1", "Galle1", "Galle1", "Galle1", "Galle1", "Galle1",};
 
     AutoCompleteTextView autocompletetextview;
 
     ArrayAdapter<String> adapterItems;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,7 @@ public class TrainReservePage extends AppCompatActivity {
 
         autocompletetextview.setAdapter(adapterItems);
 
+        Button button_d1 = findViewById(R.id.date_time_save_button);
         autocompletetextview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -47,7 +53,17 @@ public class TrainReservePage extends AppCompatActivity {
             }
         });
 
+        button_d1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(TrainReservePage.this, selected_reservation_details.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 
     private Bundle initDatePicker() {
 

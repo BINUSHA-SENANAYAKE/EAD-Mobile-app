@@ -27,23 +27,6 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent  = new Intent(LoginActivity.this, HomePage.class);
                       startActivity(intent);
             }
-//                String nationalId = binding.loginNationalID.getText().toString();
-//                String password = binding.loginPassword.getText().toString();
-//                if(nationalId.equals("")||password.equals(""))
-//                    Toast.makeText(LoginActivity.this, "All fields are mandatory", Toast.LENGTH_SHORT).show();
-//                else{
-//                    Boolean checkCredentials = databaseHelper.checkNationalIdPassword(nationalId, password);
-//                    if(checkCredentials == true){
-//                        Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-//                        Intent intent  = new Intent(LoginActivity.this, MainActivity.class);
-//                        startActivity(intent);
-//                    }else{
-//                        Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
-//                        Intent intent  = new Intent(LoginActivity.this, MainActivity.class);
-//                        startActivity(intent);
-//                    }
-//                }
-//            }
         });
         binding.signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
