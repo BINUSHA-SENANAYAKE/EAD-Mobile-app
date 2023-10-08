@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/relativeLayout3"
+    android:layout_width="364dp"
+    android:layout_height="149dp"
+    android:layout_margin="20dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/train_text_back"
+>
+
+    <TextView
+        android:id="@+id/doc_name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:padding="2dp"
+        android:text="From :-"
+        android:textColor="@color/green_700"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/train_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-1dp"
+        android:layout_toEndOf="@+id/doc_name1"
+        android:padding="2dp"
+        android:text="Kandy"
+        android:textColor="@color/green_700"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/doc_name3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="81dp"
+        android:layout_marginEnd="21dp"
+        android:layout_toStartOf="@+id/train_to"
+        android:layout_toEndOf="@+id/train_from"
+        android:padding="2dp"
+        android:text="To :-"
+        android:textColor="@color/green_700"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/train_to"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="31dp"
+        android:padding="2dp"
+        android:text="Colombo"
+        android:textColor="@color/green_700"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/doc_name5"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doc_name1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="19dp"
+        android:padding="2dp"
+        android:text="Departure Time :-"
+        android:textColor="@color/green_700"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/departureTime"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/train_from"
+        android:layout_marginStart="-16dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/doc_name5"
+        android:padding="2dp"
+        android:text="12 . 30 a.m"
+        android:textColor="@color/green_700"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/doc_name7"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doc_name5"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="5dp"
+        android:padding="2dp"
+        android:text="Arrival  Time   :-"
+        android:textColor="@color/green_700"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/arrivalTime"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/departureTime"
+        android:layout_marginStart="-21dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/doc_name7"
+        android:padding="2dp"
+        android:text="06 . 30 p.m"
+        android:textColor="@color/green_700"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/see_more_button"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doc_name1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="173dp"
+        android:layout_marginTop="58dp"
+        android:background="#00000000"
+        android:text="Reserve Now"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
