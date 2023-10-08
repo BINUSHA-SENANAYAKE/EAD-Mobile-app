@@ -40,7 +40,7 @@ public class TrainReservePage extends AppCompatActivity {
 
         autocompletetextview = findViewById(R.id.fromDropdown);
 
-        adapterItems =new ArrayAdapter<String>(this, R.layout.list_item);
+     //   adapterItems =new ArrayAdapter<String>(this, R.layout.list_item);
 
         autocompletetextview.setAdapter(adapterItems);
 
