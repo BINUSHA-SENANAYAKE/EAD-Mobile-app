@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,11 +22,17 @@ public class TrainReservePage extends AppCompatActivity {
     private String date;
     private DatePickerDialog datePickerDialog;
 
+    private scheduleServiceList selectedSchedule;
+
     String[] From = {"Galle1", "Galle1", "Galle1", "Galle1", "Galle1", "Galle1", "Galle1",};
 
     AutoCompleteTextView autocompletetextview;
 
     ArrayAdapter<String> adapterItems;
+
+    Intent intent = getIntent();
+   // scheduleServiceList selectedSchedule = (scheduleServiceList) intent.getSerializableExtra("selected_schedule");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +42,14 @@ public class TrainReservePage extends AppCompatActivity {
 
         autocompletetextview = findViewById(R.id.fromDropdown);
 
-        adapterItems =new ArrayAdapter<String>(this, R.layout.list_item);
+     //   adapterItems =new ArrayAdapter<String>(this, R.layout.list_item);
 
         autocompletetextview.setAdapter(adapterItems);
 
+        Button button_d1 = findViewById(R.id.date_time_save_button);
+        Intent intent = getIntent();
+        selectedSchedule = (scheduleServiceList)
+                intent.getSerializableExtra("selected_schedule");
         autocompletetextview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -47,7 +58,17 @@ public class TrainReservePage extends AppCompatActivity {
             }
         });
 
+        button_d1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(TrainReservePage.this, selected_reservation_details.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 
     private Bundle initDatePicker() {
 

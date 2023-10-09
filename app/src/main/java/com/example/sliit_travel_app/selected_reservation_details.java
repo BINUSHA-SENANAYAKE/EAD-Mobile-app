@@ -7,23 +7,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class TrainSchedule extends AppCompatActivity {
+public class selected_reservation_details extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_train_schedule);
+        setContentView(R.layout.activity_selected_reservation_details);
 
-
-        Button button_d1 = findViewById(R.id.see_more_button);
+        Button button_d1 = findViewById(R.id.doc_page4_btn1);
 
         button_d1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent intent = new Intent(TrainSchedule.this, TrainReservePage.class);
+                Intent intent = new Intent(selected_reservation_details.this, Reservation_ammount.class);
                 startActivity(intent);
             }
         });
-
     }
 }

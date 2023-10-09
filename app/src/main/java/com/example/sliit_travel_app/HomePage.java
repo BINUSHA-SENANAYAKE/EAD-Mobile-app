@@ -23,7 +23,7 @@ public class HomePage extends AppCompatActivity {
         button_d1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this, TrainSchedule.class);
+                Intent intent = new Intent(HomePage.this, availabeltrains.class);
                 startActivity(intent);
             }
         }
