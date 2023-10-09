@@ -1,6 +1,7 @@
 package com.example.sliit_travel_app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,21 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
     ArrayList<scheduleServiceList> scheduleServiceList;
     ArrayList<stationService> stationService;
 
+    private OnReserveButtonClickListener onReserveButtonClickListener; // Add this field
+
+    //**************************************************************************************************************************
+    public interface OnReserveButtonClickListener {
+        void onReserveButtonClick(scheduleServiceList schedule);
+    }
+
+
+
+    public scheduleAdapter(Context context, ArrayList<scheduleServiceList> arrayList, OnReserveButtonClickListener listener) {
+        this.context = context;
+        this.scheduleServiceList = arrayList;
+        this.onReserveButtonClickListener = listener;
+    }
+    //**************************************************************************************************************************
 
     public scheduleAdapter(Context context , ArrayList<scheduleServiceList> arrayList) {
         this.context = context;
@@ -38,7 +54,14 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull scheduleAdapter.ViewHolder holder, int position) {
         holder.bind(scheduleServiceList.get(position));
+        holder.reserve_now.setOnClickListener(view -> {
+            if (onReserveButtonClickListener != null) {
+                onReserveButtonClickListener.onReserveButtonClick(scheduleServiceList.get(position));
+            }
+        });
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -49,6 +72,9 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
         private TextView textViewFrom, textViewTo, textViewDepartureTime, textViewArrivalTime;
         private ArrayList<String> stationNamesList; // Create an ArrayList to store station names
 
+        private Button reserve_now;
+
+    //    private RecyclerView relativeLayout3;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,6 +83,9 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
             textViewDepartureTime = itemView.findViewById(R.id.departureTime);
             textViewArrivalTime = itemView.findViewById(R.id.arrivalTime);
             stationNamesList = new ArrayList<>(); // Initialize the ArrayList
+            reserve_now = itemView.findViewById(R.id.reserve_now);
+
+
         }
 
         public void bind(scheduleServiceList scheduleServiceList) {
@@ -74,6 +103,8 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
                     stationNamesList.add(station.getName()); // Add station names to the ArrayList
                 }
             }
+
+
         }
 
         // Add a getter method to retrieve the station names ArrayList

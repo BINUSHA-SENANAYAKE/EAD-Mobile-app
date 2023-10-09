@@ -111,7 +111,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/see_more_button"
+        android:id="@+id/reserve_now"
         android:layout_width="181dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/doc_name1"

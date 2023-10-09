@@ -1,9 +1,10 @@
 package com.example.sliit_travel_app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class scheduleServiceList {
+public class scheduleServiceList implements Serializable {
     String id;
     String name;
     String origin;
