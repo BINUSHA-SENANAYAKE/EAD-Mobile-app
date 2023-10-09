@@ -35,7 +35,9 @@ public class availabeltrains extends AppCompatActivity implements scheduleAdapte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_availabeltrains);
 
-        setContentView(R.id.reserve_now);
+      //  setContentView(R.id.reserve_now);
+      //  setContentView(R.layout.activity_availabeltrains);
+
 
         scheduleServiceLists = new ArrayList<>();
         recyclerview = findViewById(R.id.recyclerview);
@@ -44,15 +46,15 @@ public class availabeltrains extends AppCompatActivity implements scheduleAdapte
         recyclerview.setAdapter(scheduleAdapter);
         populateServices();
 
-        reserve_now.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("ButtonClicked", "Reserve Now button clicked");
-                // When the button is clicked, start the TrainReservePage activity
-                Intent intent = new Intent(availabeltrains.this, TrainReservePage.class);
-                startActivity(intent);
-            }
-        });
+//        reserve_now.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d("ButtonClicked", "Reserve Now button clicked");
+//                // When the button is clicked, start the TrainReservePage activity
+//                Intent intent = new Intent(availabeltrains.this, TrainReservePage.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
