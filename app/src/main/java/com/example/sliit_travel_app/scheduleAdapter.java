@@ -1,9 +1,11 @@
 package com.example.sliit_travel_app;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,10 +18,13 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
 
     Context context;
     ArrayList<scheduleServiceList> scheduleServiceList;
+    ArrayList<stationService> stationService;
+
 
     public scheduleAdapter(Context context , ArrayList<scheduleServiceList> arrayList) {
         this.context = context;
         this.scheduleServiceList = arrayList;
+
     }
 
     @NonNull
@@ -40,20 +45,43 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
         return scheduleServiceList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView textViewFrom,textViewTo,textViewDepartureTime,textViewArrivalTime;
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView textViewFrom, textViewTo, textViewDepartureTime, textViewArrivalTime;
+        private ArrayList<String> stationNamesList; // Create an ArrayList to store station names
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewFrom = itemView.findViewById(R.id.train_from);
             textViewTo = itemView.findViewById(R.id.train_to);
             textViewDepartureTime = itemView.findViewById(R.id.departureTime);
             textViewArrivalTime = itemView.findViewById(R.id.arrivalTime);
+            stationNamesList = new ArrayList<>(); // Initialize the ArrayList
         }
-        public void bind(scheduleServiceList scheduleServiceList){
+
+        public void bind(scheduleServiceList scheduleServiceList) {
             textViewFrom.setText(scheduleServiceList.getOrigin());
             textViewTo.setText(scheduleServiceList.getDestination());
             textViewDepartureTime.setText(scheduleServiceList.getDepartureTime());
             textViewArrivalTime.setText(scheduleServiceList.getArrivalTime());
+
+            // Add code to process stations data
+            ArrayList<stationService> stations = (ArrayList<com.example.sliit_travel_app.stationService>) scheduleServiceList.getStations();
+            if (stations != null && !stations.isEmpty()) {
+                stationNamesList.clear(); // Clear the previous station names (if any)
+
+                for (stationService station : stations) {
+                    stationNamesList.add(station.getName()); // Add station names to the ArrayList
+                }
+            }
+        }
+
+        // Add a getter method to retrieve the station names ArrayList
+        public ArrayList<String> getStationNamesList() {
+            return stationNamesList;
         }
     }
+
+
+
 }

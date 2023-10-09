@@ -20,6 +20,7 @@ public class availabeltrains extends AppCompatActivity {
     RecyclerView recyclerview;
     scheduleAdapter scheduleAdapter;
     ArrayList<scheduleServiceList> scheduleServiceLists;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,7 @@ public class availabeltrains extends AppCompatActivity {
         scheduleServiceLists = new ArrayList<>();
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        scheduleAdapter = new scheduleAdapter(availabeltrains.this,scheduleServiceLists);
+        scheduleAdapter = new scheduleAdapter(availabeltrains.this,scheduleServiceLists );
         recyclerview.setAdapter(scheduleAdapter);
         populateServices();
     }

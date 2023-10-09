@@ -1,18 +1,18 @@
 package com.example.sliit_travel_app;
 
 public class stationService {
-    private String name;
-    private String city;
-    private String province;
-    private String previousStation;
-    private String nextStation;
-    private String distanceToNextStation;
-    private String distanceToPreviousStation;
-    private String id;
-    private String createdAt;
-    private String modifiedAt;
+     String name;
+     String city;
+     String province;
+     String previousStation;
+     String nextStation;
+     String distanceToNextStation;
+     String distanceToPreviousStation;
+     String id;
+     String createdAt;
+     String modifiedAt;
 
-    public String getName() {
+     String getName() {
         return name;
     }
 

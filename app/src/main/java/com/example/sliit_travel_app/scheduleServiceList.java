@@ -12,7 +12,7 @@ public class scheduleServiceList {
     String arrivalTime;
 
     trainNameService train;
-    private ArrayList<stationService> stations;
+     ArrayList<stationService> stations;
 
     public String getId() {
         return id;
