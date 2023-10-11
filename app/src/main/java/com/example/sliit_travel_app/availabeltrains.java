@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.sliit_travel_app.schedules.ApiInterfce;
 import com.example.sliit_travel_app.schedules.ApiSchedule;
@@ -29,14 +30,15 @@ public class availabeltrains extends AppCompatActivity implements scheduleAdapte
 
 
 
-    @SuppressLint("ResourceType")
+    @SuppressLint({"ResourceType", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_availabeltrains);
 
-      //  setContentView(R.id.reserve_now);
-      //  setContentView(R.layout.activity_availabeltrains);
+
+       // setContentView(R.id.reserve_now);
+        setContentView(R.layout.activity_availabeltrains);
 
 
         scheduleServiceLists = new ArrayList<>();
@@ -46,15 +48,21 @@ public class availabeltrains extends AppCompatActivity implements scheduleAdapte
         recyclerview.setAdapter(scheduleAdapter);
         populateServices();
 
-//        reserve_now.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.d("ButtonClicked", "Reserve Now button clicked");
-//                // When the button is clicked, start the TrainReservePage activity
-//                Intent intent = new Intent(availabeltrains.this, TrainReservePage.class);
-//                startActivity(intent);
-//            }
-//        });
+        reserve_now = findViewById(R.id.reserve_now);
+        if (reserve_now != null) {
+            Toast.makeText(availabeltrains.this, "Login failed: ", Toast.LENGTH_SHORT).show();
+            reserve_now.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(availabeltrains.this, "Login failed: ", Toast.LENGTH_SHORT).show();
+                    Log.d("ButtonClicked", "Reserve Now button clicked");
+                    // When the button is clicked, start the TrainReservePage activity
+                    Intent intent = new Intent(availabeltrains.this, TrainReservePage.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
 
     }
 

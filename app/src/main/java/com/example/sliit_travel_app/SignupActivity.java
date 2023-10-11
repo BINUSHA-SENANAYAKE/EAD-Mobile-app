@@ -93,7 +93,8 @@ public class SignupActivity extends AppCompatActivity {
                                 // Registration was successful
                                 String message = respObj.getString("message");
                                 Toast.makeText(SignupActivity.this, message, Toast.LENGTH_SHORT).show();
-
+                                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                startActivity(intent);
                                 // Now you can choose to navigate to the login activity
                                 // or perform any other action after a successful registration
                             } else {
