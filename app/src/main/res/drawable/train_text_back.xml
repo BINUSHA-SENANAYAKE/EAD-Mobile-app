@@ -6,10 +6,10 @@
 
             <stroke
                 android:width="5dp"
-                android:color="@color/green_700" />
+                android:color="#3965EB" />
             <gradient android:angle="18"
-                android:startColor="#f7e6ff"
-                android:endColor="@color/green_500"/>
+                android:startColor="#E6EDFF"
+                android:endColor="#6783CC"/>
             <padding
                 android:left="10dp"
                 android:right="10dp"

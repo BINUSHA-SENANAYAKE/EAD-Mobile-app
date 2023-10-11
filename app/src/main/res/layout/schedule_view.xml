@@ -19,8 +19,8 @@
         android:layout_marginStart="10dp"
         android:padding="2dp"
         android:text="From :-"
-        android:textColor="@color/green_700"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/train_from"
@@ -30,8 +30,8 @@
         android:layout_toEndOf="@+id/doc_name1"
         android:padding="2dp"
         android:text="Kandy"
-        android:textColor="@color/green_700"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/doc_name3"
@@ -43,8 +43,8 @@
         android:layout_toEndOf="@+id/train_from"
         android:padding="2dp"
         android:text="To:-"
-        android:textColor="@color/green_700"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/train_to"
@@ -54,8 +54,8 @@
         android:layout_marginEnd="15dp"
         android:padding="2dp"
         android:text="Colombo"
-        android:textColor="@color/green_700"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/doc_name5"
@@ -67,8 +67,8 @@
         android:layout_marginTop="19dp"
         android:padding="2dp"
         android:text="Departure Time :-"
-        android:textColor="@color/green_700"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/departureTime"
@@ -80,8 +80,8 @@
         android:layout_toEndOf="@+id/doc_name5"
         android:padding="2dp"
         android:text="12 . 30 a.m"
-        android:textColor="@color/green_700"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/doc_name7"
@@ -93,8 +93,8 @@
         android:layout_marginTop="5dp"
         android:padding="2dp"
         android:text="Arrival  Time   :-"
-        android:textColor="@color/green_700"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
 
     <TextView
@@ -107,8 +107,8 @@
         android:layout_toEndOf="@+id/doc_name7"
         android:padding="2dp"
         android:text="06 . 30 p.m"
-        android:textColor="@color/green_700"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/reserve_now"
