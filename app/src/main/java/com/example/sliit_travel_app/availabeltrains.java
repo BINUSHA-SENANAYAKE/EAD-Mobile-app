@@ -44,7 +44,7 @@ public class availabeltrains extends AppCompatActivity implements scheduleAdapte
         scheduleServiceLists = new ArrayList<>();
         recyclerview = findViewById(R.id.recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        scheduleAdapter = new scheduleAdapter(availabeltrains.this,scheduleServiceLists );
+        scheduleAdapter = new scheduleAdapter(availabeltrains.this,scheduleServiceLists, this );
         recyclerview.setAdapter(scheduleAdapter);
         populateServices();
 
@@ -88,6 +88,7 @@ public class availabeltrains extends AppCompatActivity implements scheduleAdapte
 
     public void onReserveButtonClick(scheduleServiceList schedule) {
         // Handle the button click event here
+        Log.d("TRAIN", "ONclick 1");
         Intent intent = new Intent(availabeltrains.this, TrainReservePage.class);
         intent.putExtra("selected_schedule", schedule); // Pass the selected schedule data
         startActivity(intent);

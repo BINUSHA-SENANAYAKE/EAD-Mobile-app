@@ -45,20 +45,31 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
 
     @NonNull
     @Override
-    public scheduleAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.schedule_view,parent,false);
         return new ViewHolder(view);
        // return new scheduleAdapter(LayoutInflater.from(context).inflate(R.layout.schedule_view,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull scheduleAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bind(scheduleServiceList.get(position));
-        holder.reserve_now.setOnClickListener(view -> {
-            if (onReserveButtonClickListener != null) {
-                onReserveButtonClickListener.onReserveButtonClick(scheduleServiceList.get(position));
+//        holder.reserve_now.setOnClickListener(view -> {
+//            if (onReserveButtonClickListener != null) {
+//                onReserveButtonClickListener.onReserveButtonClick(scheduleServiceList.get(position));
+//            }
+//        });
+        holder.reserve_now.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scheduleServiceList item = scheduleServiceList.get(position);
+                Log.d("TRAIN","ONclick"+item);
+                if (onReserveButtonClickListener != null) {
+                    onReserveButtonClickListener.onReserveButtonClick(item);
+                }
             }
         });
+
     }
 
 
