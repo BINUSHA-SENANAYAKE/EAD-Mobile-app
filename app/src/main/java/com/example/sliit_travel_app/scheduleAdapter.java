@@ -1,5 +1,6 @@
 package com.example.sliit_travel_app;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -52,7 +53,7 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.bind(scheduleServiceList.get(position));
 //        holder.reserve_now.setOnClickListener(view -> {
 //            if (onReserveButtonClickListener != null) {
