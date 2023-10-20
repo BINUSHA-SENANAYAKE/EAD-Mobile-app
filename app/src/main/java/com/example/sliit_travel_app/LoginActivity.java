@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -26,8 +27,9 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText Email, Password;
-    private Button loginButton;
+    private EditText Email, Password  ;
+    private TextView signupRedirectText;
+    private Button loginButton ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,15 @@ public class LoginActivity extends AppCompatActivity {
         Email = findViewById(R.id.login_email);
         Password = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
+        signupRedirectText = findViewById(R.id.signupRedirectText);
+
+        signupRedirectText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
