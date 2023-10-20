@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".train_single_reservation"
+            android:exported="false" />
+        <activity
             android:name=".train_all_reservations"
             android:exported="false" />
         <activity

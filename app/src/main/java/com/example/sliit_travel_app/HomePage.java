@@ -28,5 +28,13 @@ public class HomePage extends AppCompatActivity {
             }
         }
         );
+        button_d2.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {
+                                             Intent intent = new Intent(HomePage.this, train_all_reservations.class);
+                                             startActivity(intent);
+                                         }
+                                     }
+        );
     }
 }
