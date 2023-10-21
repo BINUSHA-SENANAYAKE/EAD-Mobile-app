@@ -70,21 +70,17 @@
         android:id="@+id/date_time_save_button"
         android:layout_width="146dp"
         android:layout_height="51dp"
-        android:layout_marginStart="248dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="40dp"
         android:background="#20000000"
         android:backgroundTintMode="src_over"
-        android:text="Save "
+        android:text="Next "
         android:textColor="@color/purple_500"
         android:textSize="25sp"
         android:textStyle="italic|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
     <TextView
         android:id="@+id/doc_dog_count_1"
@@ -131,10 +127,10 @@
         <AutoCompleteTextView
             android:id="@+id/fromDropdown"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="55dp"
             android:inputType="none" />
-
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -150,7 +146,7 @@
         <AutoCompleteTextView
             android:id="@+id/toDropdown"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="55dp"
             android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
