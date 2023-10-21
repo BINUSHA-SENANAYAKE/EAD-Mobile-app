@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import android.content.SharedPreferences;
 import com.example.sliit_travel_app.HomePage;
 import com.example.sliit_travel_app.R;
 
@@ -91,6 +92,11 @@ public class LoginActivity extends AppCompatActivity {
                                 // Login was successful
                                 String message = response.getString("message");
                                 Toast.makeText(LoginActivity.this, "Login success", Toast.LENGTH_SHORT).show();
+
+                                // Save the "data" value to SharedPreferences
+                                String data = response.getString("data");
+                                saveDataToSharedPreferences(data);
+
                                 // Redirect to the home page or perform any other action
                                 Intent intent = new Intent(LoginActivity.this, HomePage.class);
                                 startActivity(intent);
@@ -116,4 +122,12 @@ public class LoginActivity extends AppCompatActivity {
         // Add the request to the Volley queue
         queue.add(request);
     }
+
+    private void saveDataToSharedPreferences(String data) {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("userData", data);
+        editor.apply();
+    }
+
 }

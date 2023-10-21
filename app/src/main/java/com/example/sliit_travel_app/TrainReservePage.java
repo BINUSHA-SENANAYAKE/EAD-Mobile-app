@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -21,17 +22,20 @@ public class TrainReservePage extends AppCompatActivity {
     private Button dateButton;
     private String date;
     private DatePickerDialog datePickerDialog;
+    scheduleServiceList selectedSchedule; // Declare it here
 
-    private scheduleServiceList selectedSchedule;
+   // private scheduleServiceList selectedSchedule  ;
 
-    String[] From = {"Galle1", "Galle1", "Galle1", "Galle1", "Galle1", "Galle1", "Galle1",};
+    String[] From = {"Galle1", "Galle2"};
+    String[] to = {"Matara 1", "Matara 2"};
 
-    AutoCompleteTextView autocompletetextview;
+    AutoCompleteTextView autocompletetextview , autocompletetextview2;
 
     ArrayAdapter<String> adapterItems;
 
     Intent intent = getIntent();
    // scheduleServiceList selectedSchedule = (scheduleServiceList) intent.getSerializableExtra("selected_schedule");
+
 
 
     @Override
@@ -41,27 +45,65 @@ public class TrainReservePage extends AppCompatActivity {
         initDatePicker();
 
         autocompletetextview = findViewById(R.id.fromDropdown);
+        autocompletetextview2 = findViewById(R.id.toDropdown);
+        dateButton = findViewById(R.id.dateButton);
 
-     //   adapterItems =new ArrayAdapter<String>(this, R.layout.list_item);
 
-        autocompletetextview.setAdapter(adapterItems);
+
+
+        // Create an ArrayAdapter to populate the AutoCompleteTextView with values from String[] From
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, From);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, to);
+
+        // Set the adapter for the AutoCompleteTextView
+        autocompletetextview.setAdapter(adapter);
+        autocompletetextview2.setAdapter(adapter2);
+
 
         Button button_d1 = findViewById(R.id.date_time_save_button);
         Intent intent = getIntent();
         selectedSchedule = (scheduleServiceList)
                 intent.getSerializableExtra("selected_schedule");
+
+        String scheduleID = selectedSchedule.getId();
+
         autocompletetextview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(), "From:" + From, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(), "From:" + From, Toast.LENGTH_SHORT).show();
             }
         });
 
         button_d1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
+                // Retrieve user inputs from the EditText and AutoCompleteTextView
+                EditText passengerCountEditText = findViewById(R.id.doc_dog_counta1);
+                String passengerCountStr = passengerCountEditText.getText().toString();
+
+                AutoCompleteTextView fromAutoCompleteTextView = findViewById(R.id.fromDropdown);
+                String from = fromAutoCompleteTextView.getText().toString();
+
+                AutoCompleteTextView toAutoCompleteTextView = findViewById(R.id.toDropdown);
+                String to = toAutoCompleteTextView.getText().toString();
+
+                // Assuming you also have selectedDate from the DatePicker
+                String selectedDate = dateButton.getText().toString(); // Retrieve from DatePicker
+
+                // Convert passengerCountStr to an integer
+                int passengerCount = 0;
+                if (!passengerCountStr.isEmpty()) {
+                    passengerCount = Integer.parseInt(passengerCountStr);
+                }
+
+                // Create an intent and pass the values to the next activity
                 Intent intent = new Intent(TrainReservePage.this, selected_reservation_details.class);
+                intent.putExtra("passengerCount", passengerCount);
+                intent.putExtra("selectedDate", selectedDate);
+                intent.putExtra("from", from);
+                intent.putExtra("to", to);
+                intent.putExtra("scheduleId", scheduleID );
                 startActivity(intent);
             }
         });
