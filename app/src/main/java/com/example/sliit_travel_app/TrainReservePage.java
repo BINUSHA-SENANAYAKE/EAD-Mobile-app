@@ -22,8 +22,9 @@ public class TrainReservePage extends AppCompatActivity {
     private Button dateButton;
     private String date;
     private DatePickerDialog datePickerDialog;
+    scheduleServiceList selectedSchedule; // Declare it here
 
-    private scheduleServiceList selectedSchedule  ;
+   // private scheduleServiceList selectedSchedule  ;
 
     String[] From = {"Galle1", "Galle2"};
     String[] to = {"Matara 1", "Matara 2"};
@@ -36,6 +37,7 @@ public class TrainReservePage extends AppCompatActivity {
    // scheduleServiceList selectedSchedule = (scheduleServiceList) intent.getSerializableExtra("selected_schedule");
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,8 @@ public class TrainReservePage extends AppCompatActivity {
         autocompletetextview = findViewById(R.id.fromDropdown);
         autocompletetextview2 = findViewById(R.id.toDropdown);
         dateButton = findViewById(R.id.dateButton);
+
+
 
 
         // Create an ArrayAdapter to populate the AutoCompleteTextView with values from String[] From
@@ -60,6 +64,9 @@ public class TrainReservePage extends AppCompatActivity {
         Intent intent = getIntent();
         selectedSchedule = (scheduleServiceList)
                 intent.getSerializableExtra("selected_schedule");
+
+        String scheduleID = selectedSchedule.getId();
+
         autocompletetextview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -96,6 +103,7 @@ public class TrainReservePage extends AppCompatActivity {
                 intent.putExtra("selectedDate", selectedDate);
                 intent.putExtra("from", from);
                 intent.putExtra("to", to);
+                intent.putExtra("scheduleId", scheduleID );
                 startActivity(intent);
             }
         });
