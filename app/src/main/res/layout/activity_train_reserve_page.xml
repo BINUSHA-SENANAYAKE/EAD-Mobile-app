@@ -47,7 +47,7 @@
 
 
     <Button
-        android:id="@+id/datePickerButton"
+        android:id="@+id/dateButton"
         android:layout_width="320dp"
         android:layout_height="41dp"
         android:layout_marginStart="16dp"
@@ -95,7 +95,7 @@
         android:textColor="@color/white"
         android:textSize="21sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/datePickerButton"
+        app:layout_constraintBottom_toTopOf="@+id/dateButton"
         app:layout_constraintEnd_toStartOf="@+id/doc_dog_counta1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +110,7 @@
         android:ems="10"
         android:inputType="number"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/datePickerButton"
+        app:layout_constraintBottom_toTopOf="@+id/dateButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/datePickerButton">
+        app:layout_constraintTop_toBottomOf="@+id/dateButton">
 
         <AutoCompleteTextView
             android:id="@+id/fromDropdown"

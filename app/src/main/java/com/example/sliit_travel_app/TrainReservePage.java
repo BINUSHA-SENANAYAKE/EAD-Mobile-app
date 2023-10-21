@@ -41,9 +41,16 @@ public class TrainReservePage extends AppCompatActivity {
         initDatePicker();
 
         autocompletetextview = findViewById(R.id.fromDropdown);
+        dateButton = findViewById(R.id.dateButton);
 
-     //   adapterItems =new ArrayAdapter<String>(this, R.layout.list_item);
 
+        // Create an ArrayAdapter to populate the AutoCompleteTextView with values from String[] From
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, From);
+
+        // Set the adapter for the AutoCompleteTextView
+        autocompletetextview.setAdapter(adapter);
+
+        //   adapterItems =new ArrayAdapter<String>(this, R.layout.list_item);
         autocompletetextview.setAdapter(adapterItems);
 
         Button button_d1 = findViewById(R.id.date_time_save_button);
