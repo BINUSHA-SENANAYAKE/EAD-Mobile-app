@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -36,5 +38,22 @@ public class HomePage extends AppCompatActivity {
                                          }
                                      }
         );
+
+        String userData = retrieveDataFromSharedPreferences();
+
+        if (userData != null) {
+            Log.d("UserData", userData); // Log the userData
+            // Now you can use the userData as needed in this part of your code
+        } else {
+            Log.d("UserData", "Data not found in SharedPreferences"); // Log a message indicating data was not found
+            // Handle the case where data is not found in SharedPreferences
+        }
     }
+
+    private String retrieveDataFromSharedPreferences() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
+        return sharedPreferences.getString("userData", null);
+    }
+
+
 }
