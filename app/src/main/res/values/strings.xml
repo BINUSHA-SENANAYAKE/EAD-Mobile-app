@@ -3,4 +3,13 @@
     <string name="disc_2">Your go-to app for booking train tickets anytime, anywhere. Simple and user-friendly, it\'s perfect for daily commuters and weekend travelers alike. Say goodbye to booking hassles with TrainEasy!</string>
     <string name="select_from">From</string>
     <string name="select_to">To</string>
+    <string name="profile">Profile</string>
+    <string name="android_developer">Android developer</string>
+    <string name="email">Email</string>
+    <string name="submit_btn">update</string>
+    <string name="password">password</string>
+    <string name="gender">Gender</string>
+    <string name="contact_number">Contact number</string>
+    <string name="name">Name</string>
+    <string name="todo">TODO</string>
 </resources>
