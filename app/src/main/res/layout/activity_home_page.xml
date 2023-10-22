@@ -18,23 +18,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <ImageView
-            android:id="@+id/homeIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/profileIcon"
+            android:layout_width="48dp"
+            android:layout_height="53dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:src="@drawable/baseline_home_24"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/circular_background"
+            android:src="@drawable/baseline_perm_identity_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/doc_pag1_img"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/doc_pag1_img"
-            android:layout_width="325dp"
-            android:layout_height="311dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="298dp"
+            android:layout_height="299dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/ticket"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.301"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -48,7 +54,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/train_button1"
+        android:background="@drawable/button_drawable"
         android:fontFamily="sans-serif-black"
         android:text="Add an reservation"
         android:textSize="18sp"

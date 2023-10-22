@@ -19,9 +19,6 @@
             android:name=".Cancel_reservation_popup"
             android:exported="false" />
         <activity
-            android:name=".custom_alert_dialog"
-            android:exported="false" />
-        <activity
             android:name=".profile"
             android:exported="false" />
         <activity
