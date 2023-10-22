@@ -22,6 +22,9 @@
             android:name=".custom_alert_dialog"
             android:exported="false" />
         <activity
+            android:name=".profile"
+            android:exported="false" />
+        <activity
             android:name=".train_single_reservation"
             android:exported="false" />
         <activity
