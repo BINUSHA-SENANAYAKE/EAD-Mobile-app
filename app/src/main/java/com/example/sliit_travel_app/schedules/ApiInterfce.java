@@ -1,5 +1,6 @@
 package com.example.sliit_travel_app.schedules;
 
+import com.example.sliit_travel_app.AddedScheduleServicesListApiResponse;
 import com.example.sliit_travel_app.scheduleServicesListApiResponse;
 
 import retrofit2.Call;
@@ -11,4 +12,7 @@ public interface ApiInterfce {
 
    @GET("schedules")
    Call<scheduleServicesListApiResponse> getServiceList();
+
+   @GET("reservations")
+   Call<AddedScheduleServicesListApiResponse> getAddedScheduleLis();
 }

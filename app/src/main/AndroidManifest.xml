@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Cancel_reservation_popup"
+            android:exported="false" />
+        <activity
+            android:name=".custom_alert_dialog"
+            android:exported="false" />
+        <activity
             android:name=".train_single_reservation"
             android:exported="false" />
         <activity

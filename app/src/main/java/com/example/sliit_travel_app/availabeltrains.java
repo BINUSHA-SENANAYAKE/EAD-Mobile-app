@@ -54,7 +54,6 @@ public class availabeltrains extends AppCompatActivity implements scheduleAdapte
             reserve_now.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(availabeltrains.this, "Login failed: ", Toast.LENGTH_SHORT).show();
                     Log.d("ButtonClicked", "Reserve Now button clicked");
                     // When the button is clicked, start the TrainReservePage activity
                     Intent intent = new Intent(availabeltrains.this, TrainReservePage.class);
