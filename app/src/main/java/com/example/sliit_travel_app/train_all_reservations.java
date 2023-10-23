@@ -168,14 +168,14 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
                                 addedSchedulesServicesLists.remove(addedSchedule);
                                 // Notify the adapter to refresh the RecyclerView
                                 addedScheduleServiceAdapter.notifyDataSetChanged();
-                                Toast.makeText(train_all_reservations.this, "Reservation deleted successfully.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(train_all_reservations.this, "Reservation canceled successfully.", Toast.LENGTH_SHORT).show();
                             } else {
                                 String message = jsonResponse.getString("message");
-                                Toast.makeText(train_all_reservations.this, "Delete failed: " + message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(train_all_reservations.this, "Reservation cancel failed: " + message, Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(train_all_reservations.this, "Delete failed: Invalid response", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(train_all_reservations.this, "Cancel failed: Invalid response", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
