@@ -55,11 +55,6 @@ public class scheduleAdapter extends RecyclerView.Adapter<scheduleAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.bind(scheduleServiceList.get(position));
-//        holder.reserve_now.setOnClickListener(view -> {
-//            if (onReserveButtonClickListener != null) {
-//                onReserveButtonClickListener.onReserveButtonClick(scheduleServiceList.get(position));
-//            }
-//        });
         holder.reserve_now.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

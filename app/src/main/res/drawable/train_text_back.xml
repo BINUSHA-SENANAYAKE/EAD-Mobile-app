@@ -5,11 +5,11 @@
         <shape>
 
             <stroke
-                android:width="5dp"
-                android:color="#3965EB" />
+                android:width="2dp"
+                android:color="#2196F3" />
             <gradient android:angle="18"
-                android:startColor="#E6EDFF"
-                android:endColor="#6783CC"/>
+                android:startColor="#FFFFFF"
+                android:endColor="#FCFDFF"/>
             <padding
                 android:left="10dp"
                 android:right="10dp"

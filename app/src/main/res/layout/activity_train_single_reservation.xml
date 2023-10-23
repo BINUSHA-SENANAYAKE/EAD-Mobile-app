@@ -16,48 +16,10 @@
 
 
     <TextView
-        android:id="@+id/train_to_A"
-        android:layout_width="129dp"
-        android:layout_height="28dp"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/train_to"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/arrival_a"
-        android:layout_width="128dp"
-        android:layout_height="31dp"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/arrival"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/arrival" />
-
-    <TextView
-        android:id="@+id/train_from"
-        android:layout_width="116dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="36dp"
-        android:text="From :-"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/from_a"
-        android:layout_width="126dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="143dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
@@ -67,25 +29,25 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/train_to"
-        android:layout_width="109dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="28dp"
-        android:text="To :-"
+        android:id="@+id/train_from"
+        android:layout_width="116dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="12dp"
+        android:text="From :-"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/train_from" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/departure"
+        android:id="@+id/date"
         android:layout_width="121dp"
         android:layout_height="29dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="4dp"
-        android:text="Departure :-"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="8dp"
+        android:text="Date :-"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -93,70 +55,92 @@
         app:layout_constraintTop_toBottomOf="@+id/train_to" />
 
     <TextView
-        android:id="@+id/departure_a"
-        android:layout_width="129dp"
-        android:layout_height="30dp"
-        android:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/departure"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/departure" />
-
-    <TextView
-        android:id="@+id/arrival"
+        android:id="@+id/passengers"
         android:layout_width="125dp"
         android:layout_height="28dp"
-        android:layout_marginStart="104dp"
-        android:text="Arrival :-"
+        android:layout_marginStart="112dp"
+        android:text="Passengers :-"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/departure"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:layout_constraintVertical_bias="0.04" />
 
     <TextView
-        android:id="@+id/amount"
-        android:layout_width="120dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="20dp"
-        android:text="Amount :-"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/arrival"
-        app:layout_constraintVertical_bias="0.333" />
-
-    <TextView
-        android:id="@+id/amount_a"
-        android:layout_width="126dp"
-        android:layout_height="28dp"
+        android:id="@+id/passengers_a"
+        android:layout_width="149dp"
+        android:layout_height="33dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/amount"
+        app:layout_constraintBaseline_toBaselineOf="@+id/passengers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintStart_toEndOf="@+id/passengers" />
+
+    <TextView
+        android:id="@+id/date_a"
+        android:layout_width="150dp"
+        android:layout_height="27dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/amount" />
+        app:layout_constraintStart_toEndOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/train_to_A"
+        android:layout_width="142dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/train_to"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/train_to"
+        android:layout_width="109dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="36dp"
+        android:text="To :-"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/train_from" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="102dp"
         android:layout_height="176dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/train_to"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/train2" />
+
+    <Button
+        android:id="@+id/button_c"
+        android:layout_width="127dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="16dp"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passengers_a"
+        app:layout_constraintVertical_bias="0.428" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
