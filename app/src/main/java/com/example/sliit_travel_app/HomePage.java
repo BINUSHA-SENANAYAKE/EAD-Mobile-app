@@ -40,6 +40,7 @@ public class HomePage extends AppCompatActivity {
 
         Button button_d1 = findViewById(R.id.doc_page1_btn);
         Button button_d2 = findViewById(R.id.doc_page1_btn2);
+        Button button_d3 = findViewById(R.id.doc_page1_btn3);
         ImageView imageView = findViewById(R.id.profileIcon);
 
 
@@ -67,6 +68,14 @@ public class HomePage extends AppCompatActivity {
                                          @Override
                                          public void onClick(View view) {
                                              Intent intent = new Intent(HomePage.this, train_all_reservations.class);
+                                             startActivity(intent);
+                                         }
+                                     }
+        );
+        button_d3.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {
+                                             Intent intent = new Intent(HomePage.this, Reservation_History.class);
                                              startActivity(intent);
                                          }
                                      }
