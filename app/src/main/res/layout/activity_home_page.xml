@@ -7,11 +7,12 @@
     android:background="@drawable/train_background"
     tools:context=".HomePage">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout6"
-        android:layout_width="414dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="407dp"
+        android:layout_height="276dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="4dp"
         android:background="@drawable/ic_trainwave"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,16 +35,15 @@
 
         <ImageView
             android:id="@+id/doc_pag1_img"
-            android:layout_width="298dp"
-            android:layout_height="299dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ticket"
+            android:layout_width="344dp"
+            android:layout_height="269dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/traind"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.301"
+            app:layout_constraintHorizontal_bias="0.371"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <Button
         android:id="@+id/doc_page1_btn"
@@ -61,10 +61,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doc_page1_disc"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.055" />
 
     <Button
         android:id="@+id/doc_page1_btn2"
+        android:layout_width="365dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/train_button1"
+        android:fontFamily="sans-serif-black"
+        android:text="View reservations"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/doc_page1_btn3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doc_page1_btn"
+        app:layout_constraintVertical_bias="0.552" />
+
+    <Button
+        android:id="@+id/doc_page1_btn3"
         android:layout_width="365dp"
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
@@ -73,21 +87,20 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/train_button1"
         android:fontFamily="sans-serif-black"
-        android:text="View reservations"
+        android:text="Reservation History"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doc_page1_btn"
-        app:layout_constraintVertical_bias="0.412" />
+        app:layout_constraintVertical_bias="0.766" />
 
     <TextView
         android:id="@+id/doc_page1_disc"
-        android:layout_width="340dp"
-        android:layout_height="220dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="372dp"
+        android:layout_height="181dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
+
         android:background="@drawable/train_text_background_2"
         android:gravity="center"
         android:text="@string/disc_2"

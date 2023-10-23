@@ -24,6 +24,7 @@ import com.example.sliit_travel_app.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -86,22 +87,18 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         // Handle the response here
                         try {
-                            // Parse the response JSON object
                             boolean success = response.getBoolean("success");
                             if (success) {
                                 // Login was successful
                                 String message = response.getString("message");
                                 Toast.makeText(LoginActivity.this, "Login success", Toast.LENGTH_SHORT).show();
 
-                                // Save the "data" value to SharedPreferences
                                 String data = response.getString("data");
                                 saveDataToSharedPreferences(data);
 
-                                // Redirect to the home page or perform any other action
                                 Intent intent = new Intent(LoginActivity.this, HomePage.class);
                                 startActivity(intent);
                             } else {
-                                // Login failed
                                 String errorMessage = response.getString("message");
                                 Toast.makeText(LoginActivity.this, "Login failed: " + errorMessage, Toast.LENGTH_SHORT).show();
                             }
@@ -115,12 +112,25 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle errors here
-                        Toast.makeText(LoginActivity.this, "Failed to login: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        if (error.networkResponse != null) {
+                            try {
+                                String errorMessage = new String(error.networkResponse.data, "UTF-8");
+                                JSONObject errorObject = new JSONObject(errorMessage);
+                                String message = errorObject.getString("message");
+                                Toast.makeText(LoginActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                            } catch (UnsupportedEncodingException | JSONException e) {
+                                e.printStackTrace();
+                                Toast.makeText(LoginActivity.this, "Failed to login: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Failed to login: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
 
-        // Add the request to the Volley queue
+// Add the request to the Volley queue
         queue.add(request);
+
     }
 
     private void saveDataToSharedPreferences(String data) {

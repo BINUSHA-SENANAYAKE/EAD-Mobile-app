@@ -47,4 +47,28 @@ public class ApiSchedule {
         return retrofit;
     }
 
+    public static Retrofit getHistorySchedule( final String authToken) {
+        if (retrofit == null) {
+            OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+            httpClient.addInterceptor(new Interceptor() {
+                @Override
+                public okhttp3.Response intercept(Chain chain) throws IOException {
+                    Request original = chain.request();
+                    Request request = original.newBuilder()
+                            .header("Authorization", "Bearer " + authToken)
+                            .method(original.method(), original.body())
+                            .build();
+                    return chain.proceed(request);
+                }
+            });
+
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(base_url)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(httpClient.build())
+                    .build();
+        }
+        return retrofit;
+    }
+
 }

@@ -37,15 +37,15 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="365dp"
-            android:layout_height="272dp"
+            android:layout_width="wrap_content"
+            android:layout_height="285dp"
             android:layout_below="@+id/booking_don_msg"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="18dp"
             android:layout_marginTop="19dp"
-            android:layout_marginBottom="31dp"
-            app:srcCompat="@drawable/ticket" />
+            android:layout_marginBottom="18dp"
+            app:srcCompat="@drawable/traina" />
 
     </RelativeLayout>
 
@@ -78,7 +78,7 @@
         android:textStyle="bold|italic"
         app:layout_constraintBaseline_toBaselineOf="@+id/doc_page4_text1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -88,7 +88,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Date :-"
+        android:text="Date                       :-"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold|italic"
@@ -115,10 +115,10 @@
         android:id="@+id/doc_page4_text3"
         android:layout_width="195dp"
         android:layout_height="33dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="From :-"
+        android:text="From                      :-"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold|italic"
@@ -137,7 +137,7 @@
         android:textStyle="bold|italic"
         app:layout_constraintBaseline_toBaselineOf="@+id/doc_page4_text3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toEndOf="@+id/doc_page4_text3" />
 
     <Button
@@ -158,11 +158,11 @@
 
     <TextView
         android:id="@+id/doc_page4_text4"
-        android:layout_width="126dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="28dp"
+        android:layout_width="195dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="To :- "
+        android:text="To                           :- "
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold|italic"
@@ -173,13 +173,20 @@
         android:id="@+id/doc_page4_text4a"
         android:layout_width="100dp"
         android:layout_height="35dp"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="24dp"
         android:text="Kandy"
         android:textColor="@color/black"
         android:textSize="22sp"
         android:textStyle="bold|italic"
         app:layout_constraintBaseline_toBaselineOf="@+id/doc_page4_text4"
         app:layout_constraintStart_toEndOf="@+id/doc_page4_text4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

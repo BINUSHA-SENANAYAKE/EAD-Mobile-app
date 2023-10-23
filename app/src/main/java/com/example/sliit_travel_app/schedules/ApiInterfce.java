@@ -15,4 +15,7 @@ public interface ApiInterfce {
 
    @GET("reservations")
    Call<AddedScheduleServicesListApiResponse> getAddedScheduleLis();
+
+   @GET("reservations/cancelled")
+   Call<AddedScheduleServicesListApiResponse> getAddedHistoryScheduleLis();
 }
