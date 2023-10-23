@@ -120,14 +120,15 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
 
         tvMessage.setText(message);
 
-        String reservationId =  addedSchedule.scheduleId;
+        String reservationId =  addedSchedule.id;
         Log.d("reservationId", reservationId);
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("Clicked", "Yes Clicked");
                 String userData = retrieveDataFromSharedPreferences();
-                deleteDataUsingVolley(reservationId, userData);
+                deleteDataUsingVolley(reservationId, userData, addedSchedule);
+                dialog.dismiss();
             }
         });
 
@@ -145,7 +146,7 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
         super.onPointerCaptureChanged(hasCapture);
     }
 
-    private void deleteDataUsingVolley(String reservationId, String userData) {
+    private void deleteDataUsingVolley(String reservationId, String userData,AddedSchedulesServicesList addedSchedule) {
         // Define the base URL with query parameters
         String baseUrl = "https://app-ticket-ease-api.azurewebsites.net/api/reservations?reservationId=" + reservationId;
         Log.d("DeleteRequest", baseUrl);
@@ -163,6 +164,10 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
                             boolean success = jsonResponse.getBoolean("success");
 
                             if (success) {
+                                // Remove the deleted reservation from the list
+                                addedSchedulesServicesLists.remove(addedSchedule);
+                                // Notify the adapter to refresh the RecyclerView
+                                addedScheduleServiceAdapter.notifyDataSetChanged();
                                 Toast.makeText(train_all_reservations.this, "Reservation deleted successfully.", Toast.LENGTH_SHORT).show();
                             } else {
                                 String message = jsonResponse.getString("message");
@@ -190,6 +195,7 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
 
         queue.add(request);
     }
+
 
 
 
