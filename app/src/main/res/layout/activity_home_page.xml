@@ -67,7 +67,7 @@
         android:id="@+id/doc_page1_btn2"
         android:layout_width="365dp"
         android:layout_height="53dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:background="@drawable/train_button1"
         android:fontFamily="sans-serif-black"
         android:text="View reservations"
@@ -75,7 +75,7 @@
         app:layout_constraintBottom_toTopOf="@+id/doc_page1_btn3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/doc_page1_btn"
-        app:layout_constraintVertical_bias="0.552" />
+        app:layout_constraintVertical_bias="0.536" />
 
     <Button
         android:id="@+id/doc_page1_btn3"
