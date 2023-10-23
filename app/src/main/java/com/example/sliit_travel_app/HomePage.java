@@ -1,5 +1,6 @@
 package com.example.sliit_travel_app;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -40,6 +41,8 @@ public class HomePage extends AppCompatActivity {
         Button button_d1 = findViewById(R.id.doc_page1_btn);
         Button button_d2 = findViewById(R.id.doc_page1_btn2);
         ImageView imageView = findViewById(R.id.profileIcon);
+
+
 
         String userData = retrieveDataFromSharedPreferences();
         Log.d("UserData3", userData);

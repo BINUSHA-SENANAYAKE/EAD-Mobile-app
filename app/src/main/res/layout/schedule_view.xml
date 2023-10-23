@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/relativeLayout3"
-    android:layout_width="364dp"
+    android:layout_width="390dp"
     android:layout_height="149dp"
     android:layout_margin="10dp"
     android:layout_marginStart="16dp"
@@ -13,11 +14,11 @@
 
     <TextView
         android:id="@+id/doc_name1"
-        android:layout_width="87dp"
+        android:layout_width="89dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_marginStart="13dp"
-        android:layout_marginEnd="0dp"
+        android:layout_marginEnd="9dp"
         android:layout_toStartOf="@+id/train_from"
         android:padding="2dp"
         android:text="From :-"
@@ -26,10 +27,10 @@
 
     <TextView
         android:id="@+id/train_from"
-        android:layout_width="wrap_content"
+        android:layout_width="78dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="26dp"
         android:layout_toStartOf="@+id/doc_name3"
         android:padding="2dp"
         android:text="Kandy"
@@ -64,8 +65,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/doc_name1"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         android:padding="2dp"
         android:text="Departure Time :-"
         android:textSize="16sp"
@@ -73,7 +74,7 @@
 
     <TextView
         android:id="@+id/departureTime"
-        android:layout_width="118dp"
+        android:layout_width="105dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/train_from"
         android:layout_marginStart="0dp"
@@ -91,8 +92,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/doc_name5"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-1dp"
         android:padding="2dp"
         android:text="Arrival  Time   :-"
         android:textSize="16sp"
@@ -100,7 +101,7 @@
 
     <TextView
         android:id="@+id/arrivalTime"
-        android:layout_width="132dp"
+        android:layout_width="107dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/departureTime"
         android:layout_marginStart="-1dp"
@@ -113,17 +114,29 @@
 
     <Button
         android:id="@+id/reserve_now"
-        android:layout_width="181dp"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="41dp"
         android:layout_below="@+id/doc_name1"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="173dp"
-        android:layout_marginTop="58dp"
+        android:layout_marginStart="217dp"
+        android:layout_marginTop="65dp"
         android:background="#00000000"
         android:text="Reserve Now"
-        android:textColor="#2196F3"
+        android:textColor="#8692f7"
         android:textSize="15sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="66dp"
+        android:layout_height="72dp"
+        android:layout_below="@+id/train_to"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="35dp"
+        android:layout_toEndOf="@+id/departureTime"
+        app:srcCompat="@drawable/train" />
 
 
 </RelativeLayout>
