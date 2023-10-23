@@ -21,13 +21,13 @@
 
         <ImageView
             android:id="@+id/imageView1"
-            android:layout_width="373dp"
-            android:layout_height="262dp"
+            android:layout_width="match_parent"
+            android:layout_height="294dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="41dp"
-            app:srcCompat="@drawable/train" />
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="14dp"
+            app:srcCompat="@drawable/traine" />
 
         <TextView
             android:id="@+id/textView"
