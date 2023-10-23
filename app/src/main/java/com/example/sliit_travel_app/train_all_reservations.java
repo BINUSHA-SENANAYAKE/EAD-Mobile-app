@@ -1,6 +1,5 @@
 package com.example.sliit_travel_app;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +24,6 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.sliit_travel_app.schedules.ApiInterfce;
 import com.example.sliit_travel_app.schedules.ApiSchedule;
@@ -63,7 +61,6 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
         recyclerView.setAdapter(addedScheduleServiceAdapter);
         populateServices();
 
-
         cancel_res = findViewById(R.id.button_c);
         if (cancel_res != null) {
             cancel_res.setOnClickListener(new View.OnClickListener() {
@@ -75,8 +72,6 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
                 }
             });
         }
-
-
     }
 
     public void populateServices() {
@@ -91,7 +86,6 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
                     }
                 }
             }
-
             @Override
             public void onFailure(Call<AddedScheduleServicesListApiResponse> call, Throwable t) {
 
@@ -109,11 +103,8 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
 
     @Override
     public void onCancelButtonClick(AddedSchedulesServicesList addedSchedule) {
-        // Intent intent = new Intent(train_all_reservations.this, Cancel_reservation_popup.class);
-        //  intent.putExtra("selected_schedule", addedSchedule); // Pass the selected schedule object directly
         String message = "Are you Sure ?";
         showCustomDialogBox(message, addedSchedule);
-        //  startActivity(intent);
     }
 
     private void showCustomDialogBox(String message, AddedSchedulesServicesList addedSchedule) {
@@ -157,7 +148,6 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
     private void deleteDataUsingVolley(String reservationId, String userData) {
         // Define the base URL with query parameters
         String baseUrl = "https://app-ticket-ease-api.azurewebsites.net/api/reservations?reservationId=" + reservationId;
-                          https://app-ticket-ease-api.azurewebsites.net/api/reservations?reservationId=652288d2ac5dbf6e7e6e79f1
         Log.d("DeleteRequest", baseUrl);
         Log.d("DeleteRequest", userData);
 
@@ -167,27 +157,22 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
                 new com.android.volley.Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        // Handle the response here
                         Log.d("DeleteRequest", response);
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
 
                             if (success) {
-                                // Reservation was deleted successfully
                                 Toast.makeText(train_all_reservations.this, "Reservation deleted successfully.", Toast.LENGTH_SHORT).show();
                             } else {
-                                // Handle other cases where deletion might not be successful
                                 String message = jsonResponse.getString("message");
                                 Toast.makeText(train_all_reservations.this, "Delete failed: " + message, Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            // Handle the case where the response is not valid JSON
                             Toast.makeText(train_all_reservations.this, "Delete failed: Invalid response", Toast.LENGTH_SHORT).show();
                         }
                     }
-
                 },
                 new com.android.volley.Response.ErrorListener() {
                     @Override
@@ -203,7 +188,6 @@ public class train_all_reservations extends AppCompatActivity implements AddedSc
             }
         };
 
-        // Add the request to the Volley queue
         queue.add(request);
     }
 
